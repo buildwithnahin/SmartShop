@@ -1,0 +1,38 @@
+# Node and package managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+.expo/
+.expo-shared/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs and temp
+logs/
+*.log
+tmp/
+.tmp/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Test and coverage
+coverage/
+.nyc_output/
+
+# Prisma
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
