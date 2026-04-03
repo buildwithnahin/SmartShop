@@ -6,6 +6,7 @@ import { globalErrorHandler, notFoundHandler } from './middlewares/error';
 import { sendSuccess } from './utils/response';
 import authRoutes from './modules/auth/auth.routes';
 import productRoutes from './modules/products/product.routes';
+import customerRoutes from './modules/customers/customer.routes';
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.get('/api/v1/health', (req, res) => {
 // App Routes will be mounted here
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/products', productRoutes);
+app.use('/api/v1/customers', customerRoutes);
 
 // 404 Handler
 app.use(notFoundHandler);
