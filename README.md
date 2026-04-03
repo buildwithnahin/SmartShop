@@ -1,61 +1,55 @@
-# SmartShop - Local Business Management System
+# SmartShop - Full-Stack POS System
 
-SmartShop is a full-stack mobile-first business management system for small businesses such as shops, restaurants, and pharmacies.
+A professional, full-stack Point of Sale (POS) and Inventory Management system built with Node.js, Express, PostgreSQL, Prisma, and React Native (Expo).
 
-It helps teams replace paper-based operations with digital workflows for inventory, customers, sales, and reporting.
+## 🚀 Features
+- **Authentication & Authorization**: Role-based access control (ADMIN, STAFF) using JWT.
+- **Inventory Management**: Track products, stock levels, and get low-stock alerts.
+- **Point of Sale (POS)**: Seamless checkout system with automatic inventory sync.
+- **Customer Management**: CRM to track customers and their purchase history.
+- **Analytics & Reporting**: Sales summaries, revenue tracking, and inventory health dashboards.
 
-## Repository Status
+## 🛠️ Technology Stack
+- **Backend**: Node.js, Express, TypeScript, Zod, Prisma, PostgreSQL
+- **Mobile**: React Native, Expo, React Navigation, Axios, Async Storage
 
-This repository is organized as a professional monorepo from day one.
+## 📂 Project Structure
+- `/backend`: Node.js REST API server
+- `/mobile`: React Native Expo mobile application
 
-- `backend/`: API server and database layer
-- `mobile/`: React Native (Expo) mobile application
-- `docs/`: architecture, API contracts, setup guides, and roadmap
+## ⚙️ Prerequisites
+- Node.js (v18+)
+- PostgreSQL database
+- Expo App on your mobile device (or iOS Simulator / Android Emulator)
 
-## Vision
+## 🏃‍♂️ Getting Started
 
-- Production-ready code quality
-- Scalable architecture
-- Transaction-safe sales flow
-- Clean separation of concerns
+### 1. Backend Setup
+```bash
+cd backend
+npm install
 
-## Planned Stack
+# Set up your .env file with DATABASE_URL and JWT_SECRET
+# Example: DATABASE_URL="postgresql://user:password@localhost:5432/smartshop"
 
-- Backend: Node.js, Express, TypeScript, Prisma, PostgreSQL
-- Mobile: React Native (Expo), TypeScript
-- Auth: JWT + bcrypt
-- Validation: Zod
+# Initialize database
+npx prisma generate
+npx prisma db push
 
-## Project Roadmap
+# Run the server (starts on http://localhost:3000)
+npm run dev
+```
 
-The project is built in segments. See `docs/ROADMAP.md` for the full step-by-step build plan.
+### 2. Mobile Setup
+```bash
+cd mobile
+npm install
 
-## Git Workflow
+# Start the Expo bundler
+npx expo start
+```
 
-Team workflow standards are documented in `docs/setup/GIT_WORKFLOW.md`.
+*Note: If you are testing on a physical device, make sure your mobile phone and computer are on the same Wi-Fi network. You may need to update the base URL in `mobile/src/api/client.ts` from `localhost` to your computer's local IP address (e.g., `192.168.1.x`).*
 
-Highlights:
-
-- Branch naming convention
-- Commit message convention
-- Pull request checklist
-- Release tagging strategy
-
-## Quick Start
-
-Initial scaffolding is prepared. Module implementation starts in Segment 1 and onward.
-
-1. Clone repository
-2. Read `docs/PROJECT_SCOPE.md`
-3. Read `docs/ROADMAP.md`
-4. Follow `docs/setup/GIT_WORKFLOW.md`
-
-## Repository Description (for GitHub)
-
-Suggested GitHub repo description:
-
-`SmartShop - Full-stack mobile local business management system with inventory, sales, customers, reports, and secure JWT auth.`
-
-Suggested topics:
-
-`smartshop`, `pos-system`, `inventory-management`, `react-native`, `express`, `typescript`, `postgresql`, `prisma`, `jwt`, `mobile-app`
+## 🤝 Project Status
+MVP Completed. Ready for production staging and continuous integration.
