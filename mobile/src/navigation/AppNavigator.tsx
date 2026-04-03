@@ -10,6 +10,7 @@ import { ProductFormScreen } from '../screens/ProductFormScreen';
 import { POSScreen } from '../screens/POSScreen';
 import { CustomersScreen } from '../screens/CustomersScreen';
 import { CustomerFormScreen } from '../screens/CustomerFormScreen';
+import { ReportsScreen } from '../screens/ReportsScreen';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -19,6 +20,7 @@ export type RootStackParamList = {
   POS: undefined;
   Customers: undefined;
   CustomerForm: { customer?: any };
+  Reports: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -47,6 +49,7 @@ export const AppNavigator = () => {
             <Stack.Screen name="POS" component={POSScreen} />
             <Stack.Screen name="Customers" component={CustomersScreen} />
             <Stack.Screen name="CustomerForm" component={CustomerFormScreen} />
+            <Stack.Screen name="Reports" component={ReportsScreen} />
           </>
         )}
       </Stack.Navigator>

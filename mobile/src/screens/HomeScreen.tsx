@@ -38,7 +38,7 @@ export const HomeScreen = () => {
           <Text style={styles.cardDesc}>View directory</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card} onPress={() => {}}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Reports')}>
           <Text style={styles.cardIcon}>📊</Text>
           <Text style={styles.cardTitle}>Reports</Text>
           <Text style={styles.cardDesc}>View analytics</Text>
