@@ -26,7 +26,7 @@ export const HomeScreen = () => {
           <Text style={styles.cardDesc}>Manage products & stock</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card} onPress={() => {}}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('POS')}>
           <Text style={styles.cardIcon}>🛒</Text>
           <Text style={styles.cardTitle}>Point of Sale</Text>
           <Text style={styles.cardDesc}>Process new sales</Text>
