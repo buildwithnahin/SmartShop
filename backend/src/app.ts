@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { globalErrorHandler, notFoundHandler } from './middlewares/error';
 import { sendSuccess } from './utils/response';
+import authRoutes from './modules/auth/auth.routes';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get('/api/v1/health', (req, res) => {
 });
 
 // App Routes will be mounted here
+app.use('/api/v1/auth', authRoutes);
 
 // 404 Handler
 app.use(notFoundHandler);
