@@ -13,7 +13,7 @@ export const getProducts = catchAsync(async (req: Request, res: Response) => {
 });
 
 export const getProductById = catchAsync(async (req: Request, res: Response) => {
-  const product = await productService.getProductById(req.params.id);
+  const product = await productService.getProductById(req.params.id as string);
   sendSuccess(res, 200, 'Product retrieved successfully', product);
 });
 
@@ -23,11 +23,11 @@ export const createProduct = catchAsync(async (req: Request, res: Response) => {
 });
 
 export const updateProduct = catchAsync(async (req: Request, res: Response) => {
-  const product = await productService.updateProduct(req.params.id, req.body);
+  const product = await productService.updateProduct(req.params.id as string, req.body);
   sendSuccess(res, 200, 'Product updated successfully', product);
 });
 
 export const deleteProduct = catchAsync(async (req: Request, res: Response) => {
-  await productService.deleteProduct(req.params.id);
+  await productService.deleteProduct(req.params.id as string);
   sendSuccess(res, 200, 'Product deleted successfully');
 });

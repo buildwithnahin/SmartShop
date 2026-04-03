@@ -7,6 +7,7 @@ import { sendSuccess } from './utils/response';
 import authRoutes from './modules/auth/auth.routes';
 import productRoutes from './modules/products/product.routes';
 import customerRoutes from './modules/customers/customer.routes';
+import saleRoutes from './modules/sales/sale.routes';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.get('/api/v1/health', (req, res) => {
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/products', productRoutes);
 app.use('/api/v1/customers', customerRoutes);
+app.use('/api/v1/sales', saleRoutes);
 
 // 404 Handler
 app.use(notFoundHandler);

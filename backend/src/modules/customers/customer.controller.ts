@@ -13,7 +13,7 @@ export const getCustomers = catchAsync(async (req: Request, res: Response) => {
 });
 
 export const getCustomerById = catchAsync(async (req: Request, res: Response) => {
-  const customer = await customerService.getCustomerById(req.params.id);
+  const customer = await customerService.getCustomerById(req.params.id as string);
   sendSuccess(res, 200, 'Customer retrieved successfully', customer);
 });
 
@@ -23,6 +23,6 @@ export const createCustomer = catchAsync(async (req: Request, res: Response) => 
 });
 
 export const updateCustomer = catchAsync(async (req: Request, res: Response) => {
-  const customer = await customerService.updateCustomer(req.params.id, req.body);
+  const customer = await customerService.updateCustomer(req.params.id as string, req.body);
   sendSuccess(res, 200, 'Customer updated successfully', customer);
 });
