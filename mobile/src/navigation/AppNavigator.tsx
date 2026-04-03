@@ -5,8 +5,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useAuth } from '../context/AuthContext';
 import { LoginScreen } from '../screens/LoginScreen';
 import { HomeScreen } from '../screens/HomeScreen';
+import { ProductsScreen } from '../screens/ProductsScreen';
+import { ProductFormScreen } from '../screens/ProductFormScreen';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Login: undefined;
+  Home: undefined;
+  Products: undefined;
+  ProductForm: { product?: any };
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const AppNavigator = () => {
   const { token, isLoading } = useAuth();
@@ -25,7 +34,11 @@ export const AppNavigator = () => {
         {token == null ? (
           <Stack.Screen name="Login" component={LoginScreen} />
         ) : (
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Products" component={ProductsScreen} />
+            <Stack.Screen name="ProductForm" component={ProductFormScreen} />
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>
