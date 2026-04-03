@@ -18,6 +18,11 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
+// Root API Check
+app.get('/api/v1', (req, res) => {
+  sendSuccess(res, 200, 'Welcome to SmartShop API v1', {});
+});
+
 // Health Check
 app.get('/api/v1/health', (req, res) => {
   sendSuccess(res, 200, 'Server is healthy', { timestamp: new Date().toISOString() });
